@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/produto.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="titulo-container">
+        <label class="title">
+            {{produto.title}}
+        </label>
+    </div>
+    <div class="produto-container">
+        <img src="{% static produto.img %}" alt="">
+        <div class="info-container">
+            <p class="estoque">Restam: 177 unidades.</p>
+            <h3 class="preco">{{produto.price}}</h3>
+            <p class="oferta">À vista no PIX com até 5% OFF</p>
+            <a href="{% url 'tela_frete' produto.id %}"><button class="btn-compra">Comprar</button></a>
+            <p>Em até 12x de <b>R$ 69,47</b> com juros de 5% no cartão.</p>
+            <p>Ver mais opções de pagamento</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

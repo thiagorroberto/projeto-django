@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/frete.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    
+    <section class="endereco">
+        <h3>INFORME SEU ENDEREÇO</h3>
+        <div class="end">
+            <p>AVENIDA GOVERNADOR AFRANIO LAGES</p>
+            <p>Número: 80, Cond Residencial Vale Do Sol, Bloco 1 Apto 203</p>
+            <p>CEP 57017225 - Maceió, AL</p>
+        </div>
+        <div class="options">
+            <p>Editar | Selecionar outro endereço</p>
+        </div>
+    </section>
+    <section class="details">
+        <h3>DETALHES DA COMPRA</h3>
+        <div class="detail">
+            <img src="{% static produto.img %}" alt="">
+            <div class="info">
+                <h4>DISPONÍVEL</h4>
+                <h2>{{produto.title}}</h2>
+                <p>Com desconto no PIX: <b>R$600,00</b></p>
+                <p>Parcelado no cartão em até 12x: <b>R$59,90</b></p>
+            </div>
+            <div class="price">
+                <p>Preço à vista no PIX:</p>
+                <h2>R${{produto.price}}</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="frete">
+        <h3>FRETE</h3>
+        <div class="frete_content">
+            <div>
+                <input type="checkbox" id="padrao">
+                <label>Entrega Padrão - Receba em até 8 dias úteis</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sedex">
+                <label>Sedex - Receba em até 10 dias úteis</label>
+            </div>
+            <h2></h2>
+            <h2></h2>
+        </div>
+    </section>
+
+    
+</div>
+<div class="finalizar-container">
+    <a href="/forma"><button>FINALIZAR COMPRA</button></a>
+</div>
+    
+{% endblock %}

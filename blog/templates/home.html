@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<section class="card-container">
+    <div class="filter">
+        <div>
+            <h3>FILTRAR POR:</h3>
+        </div>
+        <div class="filter-box">
+            <label for="">Preço:</label>
+            <div class="price">
+                <p>R$0</p>
+                <input type="range" class="bar" min="0" max="40.000">
+                <p>R$30.000</p>
+            </div>
+            
+        </div>
+        <div class="filter-box ">
+            <label for="">SOCKET:</label>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>AM2</p>
+            </div>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>AM3</p>
+            </div>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>AM4</p>
+            </div>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>AM5</p>
+            </div>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>AM2</p>
+            </div>
+        </div>
+        <div class="filter-box">
+            <label for="">NÚCLEOS:</label>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>2</p>
+            </div>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>4</p>
+            </div>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>8</p>
+            </div>
+            <div class="quantidade">
+                <input type="checkbox">
+                <p>16</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card-box">
+        
+        {% for produto in produtos %}
+            <div class="card">
+                <div>
+                    <div>
+                        <img src="{% static produto.img %}" alt="">
+                    </div>
+                    <div>
+                        <label for="">{{produto.title}}</label>
+                        <p>{{produto.price}}</p>
+                    </div>
+                </div>
+                <a href="{% url 'tela_produto' produto.id %}"><button class="btn-compra">Comprar</button></a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

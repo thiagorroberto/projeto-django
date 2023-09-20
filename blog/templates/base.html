@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Site</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/"><h1>Venda de Hardware</h1></a>
+            <input type="text" placeholder="&#xF002; Busque aqui" style="font-family:Arial, FontAwesome">
+            <button class="dpt">DEPARTAMENTOS</button>
+            <div class="conta">
+                <label for="">MINHA CONTA</label>
+                <label for="">|</label>
+                <label for="">SAIR</label>
+            </div>
+            
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

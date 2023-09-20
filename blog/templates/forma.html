@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/forma.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="pagamento-container">
+    <div class="title-container">
+        <h3>Forma de Pagamento</h3>
+    </div>
+    <div id="pix-container" >
+        <div class="opt">
+            <div>
+                <input type="radio" name="pagamento" value="Pix">
+                <label for="">PIX</label>
+            </div>
+            <div>
+                <img src="{% static 'img/pix.png' %}" alt="">
+            </div>
+        </div>
+        <div>
+            <p class="descricao">15% de desconto com aprovação imediata que torna a expedição mais rápida do pedido.</p>
+        </div>
+    </div>
+    <div id="boleto-container">
+        <div class="opt">
+            <div>
+                <input type="radio" name="pagamento" value="boleto">
+                <label for="">BOLETO BANCÁRIO</label>
+            </div>
+            <div>
+                <img src="{% static 'img/boleto.png' %}" alt="">
+            </div>
+        </div>
+        <div>
+            <p class="descricao">Você poderá visualizar ou imprimir o boleto após a finalização do pedido. Fique atento, passada a data de vencimento, seu pedido perderá automaticamente a validade.</p>
+        </div>
+    </div>
+    <div id="credito-container">
+        <div class="opt">
+            <div>
+                <input type="radio" name="pagamento"  value="boleto">
+                <label for="">CARTÃO DE CRÉDITO</label>
+            </div>
+            <div>
+                <img src="{% static 'img/cartao.png' %}" alt="">
+            </div>
+        </div>
+        <div>
+            <p class="descricao">Parcelas em até 12x com juros de 5% por mês</p>
+        </div>
+    </div>
+    <div class="termos-container">
+        <input type="checkbox">
+        <p class="termos">Concordo com os termos e condições de venda.</p>
+    </div>
+</section>
+<div class="finalizar-container">
+    <button>FINALIZAR</button>
+</div>
+
+{% endblock %}
